@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -85,17 +84,11 @@ export default {
         hobbies: this.hobbyInputs.map(hobby => hobby.value),
         terms: this.terms
       };
+      this.$store.dispatch("signup", {
+        email: formData.email,
+        password: formData.password
+      });
       console.log(formData);
-      axios
-        .post("/signupNewUser?key=AIzaSyCdda--8QdPCxPKcWWlMkB_q2B4VujdA8k", {
-          email: formData.email,
-          password: formData.password,
-          returnSecureToken: true
-        })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(error => console.log(error));
     }
   }
 };
