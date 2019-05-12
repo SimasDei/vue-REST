@@ -5,7 +5,7 @@ import axios from 'axios';
 import router from './router';
 import store from './store';
 
-axios.defaults.baseURL = 'https://vue-rest.firebaseio.com';
+axios.defaults.baseURL = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
 
 new Vue({
   el: '#app',
