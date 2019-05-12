@@ -13,23 +13,7 @@ export default {
       email: ""
     };
   },
-  created() {
-    axios
-      .get("/users.json")
-      .then(response => {
-        console.log(response);
-        const data = response.data;
-        const users = [];
-        for (const key in data) {
-          const user = data[key];
-          user.id = key;
-          users.push(user);
-        }
-        console.log(users);
-        this.email = users[0].email;
-      })
-      .catch(error => console.log(error));
-  }
+  created() {}
 };
 </script>
 
